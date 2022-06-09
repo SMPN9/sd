@@ -1,4 +1,5 @@
 
+
 <html>
 <title>Cek Kuota SD</title>
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
@@ -6,7 +7,7 @@
 
 <style>
 * {font-family: Tahoma, Helvetica, sans-serif;  }
-button{border:none;background:black;color:white;border-radius:5px;padding:5px}
+button{border:none;background:green;color:white;border-radius:5px;padding:5px}
 button:hover{border:none;background:orange;color:white;border-radius:5px;padding:5px}
 
 th{padding:5px;background:black;color:white}
@@ -31,18 +32,19 @@ table td:nth-child(1) {  font-weight:bold;
 
 <div id='hs' style='display:none'>ttt</div>
 <div id='nerr'>
-<label><b>1). Kecamatan Bulupoddo</b></label><br/><table id='tb' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><p/>
-<label><b>2). Kecamatan Sinjai Utara</b></label><br/><table id='tb1' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><p/>
-<label><b>3). Kecamatan Sinjai Timur</b></label><br/><table id='tb2' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><p/>
-<label><b>4). Kecamatan Sinjai Tengah</b></label><br/><table id='tb3' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><p/>
-<label><b>5). Kecamatan Sinjai Selatan</b></label><br/><table id='tb4' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><p/>
-<label><b>6). Kecamatan Sinjai Barat</b></label><br/><table id='tb5' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><p/>
-<label><b>7). Kecamatan Sinjai Borong</b></label><br/><table id='tb6' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><p/>
-<label><b>8). Kecamatan Tellu Limpoe</b></label><br/><table id='tb7' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><p/>
-<label><b>9). Kecamatan Pulau Sembilang</b></label><br/><table id='tb8' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><p/>
+<label><b>1). Kecamatan Bulupoddo</b></label><br/><table id='tb' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><button onclick="cek2(0,this)">Klik disini</button><p/>
+
+<label><b>2). Kecamatan Sinjai Utara</b></label><br/><table id='tb1' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><button onclick="cek2(1,this)">Klik disini</button><p/>
+<label><b>3). Kecamatan Sinjai Timur</b></label><br/><table id='tb2' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><button onclick="cek2(2,this)">Klik disini</button><p/>
+<label><b>4). Kecamatan Sinjai Tengah</b></label><br/><table id='tb3' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><button onclick="cek2(3,this)">Klik disini</button><p/>
+<label><b>5). Kecamatan Sinjai Selatan</b></label><br/><table id='tb4' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><button onclick="cek2(4,this)">Klik disini</button><p/>
+<label><b>6). Kecamatan Sinjai Barat</b></label><br/><table id='tb5' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><button onclick="cek2(5,this)">Klik disini</button><p/>
+<label><b>7). Kecamatan Sinjai Borong</b></label><br/><table id='tb6' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><button onclick="cek2(6,this)">Klik disini</button><p/>
+<label><b>8). Kecamatan Tellu Limpoe</b></label><br/><table id='tb7' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><button onclick="cek2(7,this)">Klik disini</button><p/>
+<label><b>9). Kecamatan Pulau Sembilang</b></label><br/><table id='tb8' border='1'><tr><th>NPSN</th><th>Nama Sekolah</th><th>Kuota</th><th>Terdaftar</th></tr></table><button onclick="cek2(8,this)">Klik disini</button><p/>
 </div>
 <script>
-var hs=''; var totm=0;var toth=0; var hit=0
+var hs=''; var totm=0;var toth=0; var hit=0,bcek=0;
 var err=document.getElementById('err');
 var nerr=document.getElementById('nerr');
 var yy=document.getElementById('hs');
@@ -314,8 +316,10 @@ var js8=['40304727',
 '40304454',
 '40304466'
 ]
-cek2(0)
-function cek2(n){
+//cek2(0)
+function cek2(n,apa){
+if(bcek==1){alert("Maaf proses sibuk");return false}
+else {apa.style.display='none'}
 
 switch (n){
  case 0 :
@@ -367,7 +371,8 @@ break;
 }
 
 function go(url){
-	
+
+	bcek=1	
 const xhttp = new XMLHttpRequest();
 xhttp.onload = function() {hs=xhttp.responseText;yy.innerHTML=hs;
 //var mm=document.getElementById("hs")
@@ -418,10 +423,8 @@ cell4.innerHTML = nm2[1].innerHTML;
 yy.innerHTML=''	
 	
 	
-if (totm==toth){ hit++;	
-if(hit<9){
-setTimeout(function(){cek2(hit)},1000)
-   }}}
+if (totm==toth){ hit++;bcek=0	
+}}
 xhttp.onerror=function(e){err.style.display='block';}
 xhttp.open("GET", "https://script.google.com/macros/s/AKfycbwy1Szy85MoIlnAU05B3uYg6x7qjVrFoE2S_iDIFxzGn4wiisp2/exec?type="+url);
  
